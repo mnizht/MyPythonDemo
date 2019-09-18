@@ -7,7 +7,7 @@ r = range(10,0,-1)
 #   2.结束位置
 #   3.步长（可以省略，默认是1）
 
-# print(list(r))
+print(list(r))
 
 # 通过range()可以创建一个执行指定次数的for循环
 # for()循环除了创建方式以外，其余的都和while一样，
@@ -15,7 +15,7 @@ r = range(10,0,-1)
 #   并且for循环使用也更加简单
 # 将之前使用while循环做的练习，再使用for循环完成一次！
 for i in range(30):
-    print(i)
+    print(i, end=' ')
 
 # for s in 'hello':
 #     print(s)
