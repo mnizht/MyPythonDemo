@@ -3,8 +3,15 @@ import time
 from selenium import webdriver
 from src.autoclick import cookie_data
 
-# 创建Chrome对象
-driver = webdriver.Chrome('C:/Users/zhuhaitao/PycharmProjects/path/chromedriver')
+driver_path = 'C:/Users/zhuhaitao/PycharmProjects/path/chromedriver'
+# 创建Chrome对象,有界面
+# driver = webdriver.Chrome(driver_path)
+
+# 无界面操作
+option = webdriver.ChromeOptions()
+option.add_argument('headless')
+driver = webdriver.Chrome(executable_path=driver_path, options=option)
+
 # 签到地址
 checkin_url = 'https://hacpai.com/activity/checkin'
 
@@ -22,13 +29,20 @@ driver.add_cookie({
 # 重新发送请求，由于添加了cookie，此时应该是登录状态
 driver.get(checkin_url)
 time.sleep(3)
-# btn = driver.find_element_by_class_name('btn green')
-btn = driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div[1]/div[1]/a')
+# find_element 都只取找到的第一个元素；find_elements 会取出所有符合条件的元素
+# 按class名称定为元素，若class中是带空格的多个名称，需要指定其中一个
+# btn = driver.find_element_by_class_name('green')
+# 按链接的文本内容模糊匹配
+# btn = driver.find_element_by_partial_link_text('签到')
+# 按元素的绝对路径定位
+# btn = driver.find_element_by_xpath('/html/body/div[1]/div/div[1]/div[1]/div[1]/a')
+# 按css 属性定位
+btn = driver.find_element_by_css_selector('.btn.green')
 print(btn)
-btn.click()
+# btn.click()
 
-btn = driver.find_element_by_xpath('/html/body/div[1]/div[1]/a[2]')
-btn.click()
+# btn = driver.find_element_by_xpath('/html/body/div[1]/div[1]/a[2]')
+# btn.click()
 
 # 使用完关闭浏览器，不然Chromedriver.exe 进程会一直在内存中
 # driver.quit()
