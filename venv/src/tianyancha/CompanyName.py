@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 from src.autoclick import cookie_data
 
 
-def save_evaluate(page, size):
+def save_info(page, size):
     # 获取公司名称
     try:
         if page > 250:
