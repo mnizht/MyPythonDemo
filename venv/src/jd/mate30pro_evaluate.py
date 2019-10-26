@@ -65,6 +65,8 @@ while True:
         page = page + 1
         btn.send_keys(Keys.ENTER)
         time.sleep(1)
+        if page > 5:
+            break
     except:
         print('没有下一页了。。。。。。。')
         btn = None
