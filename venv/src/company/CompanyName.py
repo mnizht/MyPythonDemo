@@ -47,8 +47,8 @@ app = xw.App(visible=True, add_book=False)
 file = app.books.add()
 sheet = file.sheets[0]
 
-# 天眼查主页
-tyc = 'https://www.tianyancha.com/'
+# 主页
+tyc = 'https://www.xxxxx.com/'
 driver.get(tyc)
 time.sleep(20)
 driver.refresh()

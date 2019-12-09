@@ -40,8 +40,8 @@ driver = webdriver.Chrome(driver_path)
 # file = app.books.add()
 # sheet = file.sheets[0]
 
-# 天眼查主页
-tyc_company = 'https://www.tianyancha.com/company/%s'
+# 主页
+tyc_company = 'https://www.xxxx.com/company/%s'
 
 # 读取公司信息
 companies = ['3189766102','3189766122','3095029848']
