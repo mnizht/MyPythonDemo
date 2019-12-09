@@ -1,0 +1,24 @@
+{
+  "name": "MyPythonDemo",
+  "version": "1.0.0",
+  "description": "阿里云Python学习路线",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnizht/MyPythonDemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnizht/MyPythonDemo/issues"
+  },
+  "homepage": "https://github.com/mnizht/MyPythonDemo#readme",
+  "dependencies": {
+    "chromedriver": "^78.0.1",
+    "selenium": "^2.20.0"
+  }
+}
