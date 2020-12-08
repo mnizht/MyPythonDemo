@@ -1,30 +1,30 @@
+import codecs
 import json
 import time
-import codecs
+import uuid
 
 from faker import Faker
 
 fake = Faker(locale='zh_CN')
 
-with codecs.open('d://data.json', 'a', 'utf-8') as fw:
-    data = list()
-    for num in range(1, 100):
+with codecs.open('d://data.json', 'a', 'utf-8') as a:
+    for num in range(1, 10001):
+        uuid = uuid.uuid1()
         index = {
             "index": {
-                "_id": str(num)
+                "_id": uuid
             }
         }
+        json.dump(index, a, ensure_ascii=False)
+        a.write("\n")
         person = {
-            "id": num,
+            "id": uuid,
             "name": fake.name(),
             "phone": fake.phone_number(),
             "address": fake.address(),
             "company": fake.company()
         }
-        data.append(index)
-        data.append(person)
-
-    print(data)
-    json.dump(data, fw, ensure_ascii=False)
+        json.dump(person, a, ensure_ascii=False)
+        a.write("\n")
 
 print("End")
